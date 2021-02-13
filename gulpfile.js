@@ -8,6 +8,8 @@ const cssnano = require('cssnano');
 const sourcemaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
+const { src } = require('gulp');
+const pug = require('gulp-pug');
 
 gulp.task('server', () => {
     browserSync.init({
@@ -17,6 +19,26 @@ gulp.task('server', () => {
         }
     })
 });
+
+gulp.task('pug', (cb) => {
+    return gulp.src('./src/pug/*.pug')
+        .pipe(plumber(
+        {
+            errorHandler: notify.onError((err) => {
+                return {
+                    title: 'PugError',
+                    sound: false,
+                    message: err.message
+                }
+            })
+        }
+        )) 
+        .pipe(sourcemaps.init())
+        .pipe(pug())
+        .pipe(gulp.dest('./dist/'))
+    cb();
+})
+
 gulp.task('scss', (callback) => {
     let plugins = [
         autoprefixer(),
@@ -43,9 +65,13 @@ gulp.task('scss', (callback) => {
 })
 gulp.task('watch', () => {
     watch(['./src/scss/**/*.scss'], () => {
-    setTimeout(gulp.parallel('scss'), 1000)});
+    setTimeout(gulp.parallel('scss'), 1000)
+    });
+    watch(['./src/pug/**/*.pug'], () => {
+        setTimeout(gulp.parallel('pug'), 500)
+    });
     watch(['./dist/*.html', './dist/css/*.css'], gulp.parallel(browserSync.reload)); 
 })
 
 gulp.task();
-gulp.task('default', gulp.series('scss', gulp.parallel('watch','server'))); 
+gulp.task('default', gulp.series(gulp.parallel('scss', 'pug'), gulp.parallel('watch','server'))); 
