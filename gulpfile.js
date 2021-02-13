@@ -34,8 +34,12 @@ gulp.task('pug', (cb) => {
         }
         )) 
         .pipe(sourcemaps.init())
-        .pipe(pug())
+        .pipe(pug({
+            pretty: true
+        }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./dist/'))
+        .pipe(browserSync.stream())
     cb();
 })
 
@@ -60,17 +64,17 @@ gulp.task('scss', (callback) => {
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss(plugins))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./dist/css'));
+        .pipe(gulp.dest('./dist/css'))
+        .pipe(browserSync.stream());
         callback();
 })
 gulp.task('watch', () => {
     watch(['./src/scss/**/*.scss'], () => {
-    setTimeout(gulp.parallel('scss'), 1000)
+        setTimeout(gulp.parallel('scss'), 1000)
     });
     watch(['./src/pug/**/*.pug'], () => {
         setTimeout(gulp.parallel('pug'), 500)
     });
-    watch(['./dist/*.html', './dist/css/*.css'], gulp.parallel(browserSync.reload)); 
 })
 
 gulp.task();
