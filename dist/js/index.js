@@ -1,0 +1,9 @@
+"use strict";
+
+console.log('hey, world!');
+var someVariable = {
+  first: 1,
+  second: 2,
+  third: 4
+};
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImNvbnNvbGUiLCJsb2ciLCJzb21lVmFyaWFibGUiLCJmaXJzdCIsInNlY29uZCIsInRoaXJkIl0sIm1hcHBpbmdzIjoiOztBQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBWSxhQUFaO0FBQ0EsSUFBTUMsWUFBWSxHQUFHO0FBQ2pCQyxFQUFBQSxLQUFLLEVBQUUsQ0FEVTtBQUVqQkMsRUFBQUEsTUFBTSxFQUFFLENBRlM7QUFHakJDLEVBQUFBLEtBQUssRUFBRTtBQUhVLENBQXJCIiwic291cmNlc0NvbnRlbnQiOlsiY29uc29sZS5sb2coJ2hleSwgd29ybGQhJylcclxuY29uc3Qgc29tZVZhcmlhYmxlID0ge1xyXG4gICAgZmlyc3Q6IDEsXHJcbiAgICBzZWNvbmQ6IDIsXHJcbiAgICB0aGlyZDogNFxyXG59Il0sImZpbGUiOiJpbmRleC5qcyJ9

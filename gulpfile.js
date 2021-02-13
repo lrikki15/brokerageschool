@@ -10,6 +10,8 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const { src } = require('gulp');
 const pug = require('gulp-pug');
+const babel = require('gulp-babel');
+const minify = require('gulp-minify');
 
 gulp.task('server', () => {
     browserSync.init({
@@ -19,7 +21,6 @@ gulp.task('server', () => {
         }
     })
 });
-
 gulp.task('pug', (cb) => {
     return gulp.src('./src/pug/*.pug')
         .pipe(plumber(
@@ -42,7 +43,6 @@ gulp.task('pug', (cb) => {
         .pipe(browserSync.stream())
     cb();
 })
-
 gulp.task('scss', (callback) => {
     let plugins = [
         autoprefixer(),
@@ -75,7 +75,32 @@ gulp.task('watch', () => {
     watch(['./src/pug/**/*.pug'], () => {
         setTimeout(gulp.parallel('pug'), 500)
     });
+    watch(['./src/js/**/*.js'], () => {
+        setTimeout(gulp.parallel('js'), 500)
+    });
 })
 
-gulp.task();
+gulp.task('js', (cb) => {
+    return gulp.src('./src/js/*.js')
+        .pipe(plumber(
+            {
+                errorHandler: notify.onError((err) => {
+                    return {
+                        title: 'JSerror',
+                        sound: false,
+                        message: err.message
+                    }
+                })
+            }
+        ))
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(minify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./dist/js/'))
+        .pipe(browserSync.stream())
+    cb();
+});
 gulp.task('default', gulp.series(gulp.parallel('scss', 'pug'), gulp.parallel('watch','server'))); 
