@@ -1,5 +1,28 @@
+@import './normalize';
+@import './variables';
+@import './mixins';
+@import './header';
+html{
+    font-size: 10px;
+}
 body{
+    color: $textBlack;
     display: flex;
     flex-direction: column;
-    background-color: rgb(155, 74, 49);
+    align-items: stretch;
+    font-family: $roboto;
+}
+.container{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.dark-layer{
+    position: absolute;
+    background-color: $darkLayer;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 1, 10, 0.65);
+    backdrop-filter: blur(5px);
 }

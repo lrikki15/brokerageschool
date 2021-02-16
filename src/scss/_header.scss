@@ -1,0 +1,213 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: black url('../assets/images/charts.jpg');
+    background-size: cover;
+    height: 100vh;
+    color: $mainWhite;
+
+    //затемнение фона
+    &__container{
+        position: relative;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+    &__heading{
+        display: flex;
+        justify-content: flex-end;
+        align-items: stretch;
+        margin-top: 4vh;
+    }
+    &__nav{
+        display: none;
+        @include screen_992{
+            display: flex;
+            font-size: 1.4rem;
+        }
+    }
+    &__nav-item{
+        @include screen_992{
+            padding: 5px 15px;
+        }
+        @include screen_1200{
+            padding: 5px 15px;
+        }
+    }
+    &__menu-button{
+        display: flex;
+        flex-direction: column;
+        height: 20px;
+        width: 40px;
+        justify-content: space-between;
+        @include screen_768{
+            height: 26px;
+        }
+        @include screen_992{
+            display: none;
+        }
+    }
+    &__menu-button-line{
+        width: 100%;
+        height: 2px;
+        background-color: $mainWhite;
+        &:nth-child(2){
+            position: relative;
+            left: -20%;
+        }
+        @include screen_768{
+            height: 3px;
+        }
+    }
+    &__main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: -4vh;
+        @include screen_576{
+            flex-direction: row;
+        }
+        @include screen_768{
+            flex-direction: column;
+            align-items: flex-start;
+            align-self: center;
+            width: 80%;
+        }
+        @include screen_992{
+            width: auto;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+    &__titles{
+        display: flex;
+        flex-direction: column;
+    }
+    &__up-title{
+        text-align: center;
+        font-size: 1.6rem;
+        margin-bottom: 1vh;
+        @include screen_360{
+            font-size: 1.8rem;
+        }
+        @include screen_576{
+            text-align: left;
+        }
+        @include screen_768{
+            font-size: 2.4rem;
+        }
+        @include screen_992{
+            font-size: 1.8rem;
+            margin-bottom: 0;
+        }
+    }
+    &__main-title{
+        font-family: $redrose;
+        letter-spacing: 2px;
+        line-height: 110%;
+        font-size: 2.6rem;
+        text-align: center;
+        margin-bottom: 1vh;
+
+        @include screen_360{
+            font-size: 3rem;
+        }
+        @include screen_576{
+            text-align: left;
+        }
+        @include screen_768{
+            font-size: 6rem;
+        }
+        @include screen_992{
+            font-size: 6rem;
+            margin-bottom: 0;
+        }
+        @include screen_1200{
+            font-size: 5rem;
+        }
+    }
+    &__down-title{
+        font-size: 1.6rem;
+        text-align: center;
+        @include screen_360{
+            font-size: 1.8rem;
+        }
+        @include screen_576{
+            text-align: left;
+        }
+        @include screen_768{
+            font-size: 2.4rem;
+        }
+        @include screen_992{
+            font-size: 1.8rem;
+        }
+    }
+    &__logo{
+        border-radius: 50%;
+        filter: drop-shadow(0px 0px 2px rgba(239, 250, 255, 0.99));
+        border-radius: 100px;
+        background: url(../assets/images/logotipes/brokerage-logo.png);
+        background-size: cover;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 2vh;
+        flex-shrink: 0;
+        @include screen_576{
+            margin-right: 20px;
+        }
+        @include screen_360{
+            width: 120px;
+            height: 120px;
+        }
+        @include screen_992{
+            margin-bottom: 0;
+        }
+        @include screen_1200{
+            width: 120px;
+            height: 120px;
+        }
+    }
+    &__footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 3vh;
+
+        @include screen_1200{
+            align-self: stretch;
+            margin-bottom: 4vh;
+            justify-content: center;
+            position: relative; 
+        }
+    }
+    &__social{
+        display: flex;
+        font-size: 1.6rem;
+        @include screen_360{
+            font-size: 1.8rem;
+        }
+        @include screen_768{
+            font-size: 2.4rem;;
+        }
+        @include screen_1200{
+            position: absolute;
+            top: center;
+            left: 0;
+            font-size: 2rem;
+        }
+    }
+    &__social-item{
+        margin-right: 10px;
+        @include screen_360{
+            margin-right: 20px;
+        }
+    }
+    &__arrow-down{
+        font-size: 1.6rem;
+        @include screen_768{
+            font-size: 2.4rem;;
+        }
+    }
+}

@@ -18,3 +18,8 @@
         @content;
     }
 }
+@mixin screen_360{
+    @media (min-width: 360px){
+        @content;
+    }
+}

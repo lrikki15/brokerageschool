@@ -78,6 +78,9 @@ gulp.task('watch', () => {
     watch(['./src/js/**/*.js'], () => {
         setTimeout(gulp.parallel('js'), 500)
     });
+    watch(['./src/assets/images/**/*.*'], () => {
+        setTimeout(gulp.parallel('images'), 500)
+    });
 })
 
 gulp.task('js', (cb) => {
