@@ -1,0 +1,26 @@
+@import './mixins';
+
+h1, h2, h3, p, body, ul, li{
+    margin: 0;
+}
+a,ul,p{
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{  
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+html{
+    font-size: 10px;
+    @include screen_576{
+    }
+    @include screen_768{
+    }
+}
+*{
+    box-sizing: border-box;
+}
