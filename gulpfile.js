@@ -12,7 +12,7 @@ const { src } = require('gulp');
 const pug = require('gulp-pug');
 const babel = require('gulp-babel');
 const minify = require('gulp-minify');
-
+const imagemin = require('gulp-imagemin');
 gulp.task('server', () => {
     browserSync.init({
         server: {
@@ -103,4 +103,10 @@ gulp.task('js', (cb) => {
         .pipe(browserSync.stream())
     cb();
 });
-gulp.task('default', gulp.series(gulp.parallel('scss', 'pug'), gulp.parallel('watch','server'))); 
+gulp.task('images', function(cb){
+    return gulp.src('./src/assets/images/**/*.*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('./dist/assets/images/'));
+    cb();
+});
+gulp.task('default', gulp.series(gulp.parallel('scss', 'pug','images'), gulp.parallel('watch','server'))); 
