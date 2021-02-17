@@ -73,9 +73,32 @@ body{
         }
         @include screen_992{
         }
-    }
-
-    
+    }   
 }
-
+.button{
+    display: flex;
+    background: linear-gradient(180deg, rgba(0, 71, 255, 0.99) 0%, rgba(29, 173, 235, 0.9801) 100%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    margin-bottom: 4vh;
+    & > span {
+        font-weight: bold;
+        margin: auto;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        color: white;
+    }
+    
+    &:hover{
+        background: linear-gradient(180deg, rgba(134, 168, 255, 0.99) 0%, rgba(11, 168, 236, 0.9801) 100%);
+    }
+    
+    @include screen_1200{
+        padding: 10px 25px;
+    }
+}
 
