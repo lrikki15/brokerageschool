@@ -199,6 +199,13 @@
     }
 }
 .about{
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 4vh;
+
+    }
     &__text{
         font-size: 1.2rem;
         & > p{
@@ -209,17 +216,22 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 2vh 0;
     }
 }
 .teacher{
     margin-bottom: 2vh;
     display: flex;
     flex-direction: column;
-
+    &__photo{
+        margin-bottom: 5px;
+    }
     &__name{
         font-size: 1.6rem;
+        margin-bottom: 5px;
     }
     &__descr{
         font-size: 1.4rem;
+        margin-bottom: 5px;
     }
 }
