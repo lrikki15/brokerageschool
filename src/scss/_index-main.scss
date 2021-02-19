@@ -74,7 +74,7 @@
     &__text{
         font-size: 1.2rem;
         @include screen_992{
-            font-size: 1.4rem;
+            font-size: 1.6rem;
         }
     }
     &__cards{
@@ -93,6 +93,7 @@
     display: flex;
     margin-bottom: 2vh;
     align-items: center;
+    
     @include screen_576{
         width: 48%;
         border: 1px solid $mainWhite;
@@ -145,11 +146,30 @@
     flex-direction: column;
     align-items: center;
     color: $mainWhite;
-
+    
     &__items{
         display: flex;
         flex-direction: column;
         margin-bottom: 2vh;
+        @include screen_576{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        @include screen_992{
+        }
+        @include screen_1200{
+        }
+    }
+    &__button{
+        margin-top: auto;
+        @include screen_576{
+            width: 50%;
+            align-self: center;
+        }
+        @include screen_1200{
+            width: 30%;
+        }
     }
 }
 .s-item{
@@ -163,18 +183,31 @@
     padding: 15px;
     position: relative;
     min-height: 150px;
+
     &:last-child{
         margin-bottom: 0;
+        @include screen_576{
+            margin-bottom: 2vh;
+        }
+        @include screen_1200{
+            margin-bottom: 3vh;
+        }
+    }
+    @include screen_576{
+        width: 48%;
+    }
+    @include screen_992{
+        width: 30%;
     }
     @include screen_1200{
         width: 30%;
-        padding: 15px;
-        margin-bottom: 30px;
+        padding: 30px;
+        margin-bottom: 3vh;
     }
     &__icon{
         position: absolute;
         height: 90%;
-        opacity: 0.2;
+        opacity: 0.15;
         top: 5%;
         right: 5%;
     }
@@ -182,20 +215,18 @@
         text-transform: uppercase;
         margin-bottom: 2vh;
         font-size: 1.4rem;
-        @include screen_1200{
+        @include screen_992{
+            width: 70%;
             font-size: 1.8rem;
             margin-bottom: 30px;
         }
     }
     &__description{
         font-size: 1.2rem;
-        @include screen_1200{
-            font-size: 1.4rem;
+        @include screen_992{
+            font-size: 1.6rem;
             margin-bottom: 30px;
         }
-    }
-    &__button{
-        margin-top: auto;
     }
 }
 .about{
@@ -208,21 +239,39 @@
     }
     &__text{
         font-size: 1.2rem;
+        @include screen_768{
+            font-size: 1.4rem;
+        }
+        @include screen_992{
+            font-size: 1.6rem;
+            line-height: 140%;
+        }
         & > p{
             margin-bottom: 2vh;
         }
     }
     &__teachers{
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 2vh 0;
+
+        @include screen_576{
+            flex-direction: row;
+            justify-content: flex-start;
+        }
     }
 }
 .teacher{
     margin-bottom: 2vh;
     display: flex;
     flex-direction: column;
+    width: 80%;
+    @include screen_576{
+        width: 30%;
+        margin-left: 4vw;
+    }
     &__photo{
         margin-bottom: 5px;
     }
@@ -233,5 +282,8 @@
     &__descr{
         font-size: 1.4rem;
         margin-bottom: 5px;
+    }
+    @include screen_576{
+        
     }
 }

@@ -45,6 +45,7 @@ body{
         margin: 4vh 0;
     }
     @include screen_992{
+        margin: 8vh 0;
     }
     &__line{
         height: 2px;
@@ -57,9 +58,8 @@ body{
         @include screen_576{
             font-size: 1.8rem;
         }
-        @include screen_768{
-        }
         @include screen_992{
+            font-size: 2.0rem;
         }
     }
     
@@ -85,12 +85,15 @@ body{
     padding: 10px 20px;
     font-size: 1.6rem;
     margin-bottom: 4vh;
-    & > span {
+    &__text {
         font-weight: bold;
         margin: auto;
         font-size: 1.2rem;
         text-transform: uppercase;
         color: white;
+        @include screen_768{
+            font-size: 1.4rem;
+        }
     }
     
     &:hover{
@@ -98,7 +101,7 @@ body{
     }
     
     @include screen_1200{
-        padding: 10px 25px;
+        padding: 15px 20px;
     }
 }
 
