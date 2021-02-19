@@ -77,19 +77,25 @@ body{
 }
 .button{
     display: flex;
-    background: linear-gradient(180deg, rgba(0, 71, 255, 0.99) 0%, rgba(29, 173, 235, 0.9801) 100%);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+    background: linear-gradient(180deg, rgba(0, 71, 255, 0.5) 0%, rgba(29, 173, 235, 0.5) 100%);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
     border: none;
     outline: none;
     cursor: pointer;
     padding: 10px 20px;
-    font-size: 1.6rem;
     margin-bottom: 4vh;
+
+    @include screen_992{
+       padding: 1rem 5rem;
+    }
+
     &__text {
         font-weight: bold;
         margin: auto;
         font-size: 1.2rem;
-        text-transform: uppercase;
         color: white;
         @include screen_768{
             font-size: 1.4rem;
