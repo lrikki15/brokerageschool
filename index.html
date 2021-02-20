@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/index.js"> </script>
     <title>Brokerage - школа трейдинга</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Red+Rose:wght@300;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./modules/slick/slick.css">
+    <link rel="stylesheet" href="./modules/slick/slick-theme.css">
+    <link rel="stylesheet" href="./modules/magnific/magnific-popup.css">
+    <script src="./modules/jquery-3.5.1.min.js"></script>
+    <script src="./modules/slick/slick.min.js"></script>
+    <script src="./modules/magnific/jquery.magnific-popup.min.js"></script>
+    <script src="./js/index.js"></script>
   </head>
   <body> 
     <header class="header"> 
@@ -143,6 +149,13 @@
           </div>
         </div>
       </div>
+      <div class="main__section free-classes">
+        <div class="main__container free-classes__container container">
+          <div class="section-title free-classes__section-title">
+            <h2 class="section-title__text">Только образование и опыт делают человека богаче: получи 3 бесплатных урока и сделай первые шаги на пути трейдера!</h2>
+          </div><a class="free-classes__button button" href=""> <span>Получить бесплатные уроки</span></a>
+        </div>
+      </div>
       <div class="main__section services">
         <div class="main__container container">
           <div class="section-title">
@@ -151,27 +164,27 @@
             <div class="section-title__right-line section-title__line"></div>
           </div>
           <div class="services__items">
-            <article class="s-item">
+            <article class="s-item"><img class="s-item__icon" src="./assets/images/icons/base-course.png" alt="Уровень 1">
               <h3 class="s-item__title">учебный курс "базовый"</h3>
               <div class="s-item__description">Это базовая программа, рассчитанная на две недели обучения. Слушателям назначается куратор, с которым согласуется посещение и расписание уроков торговли на валютном и Фондовом рынках</div>
             </article>
-            <article class="s-item">
+            <article class="s-item"><img class="s-item__icon" src="./assets/images/icons/wide-course.png" alt="Уровень 2">
               <h3 class="s-item__title">учебный курс "расширенный"</h3>
               <div class="s-item__description">В данном курсе участвуют слушатели программы Базового курса, а также трейдеры, которые уже имеют базовые знания и хотят больше уделить время практике.</div>
             </article>
-            <article class="s-item">
+            <article class="s-item"><img class="s-item__icon" src="./assets/images/icons/expert-course.png" alt="Уровень 3">
               <h3 class="s-item__title">учебный курс "эксперт"</h3>
               <div class="s-item__description">В данном курсе участвуют слушатели программы Базового курса, и расширенного курса а также трейдеры, которые уже имеют базовые знания и хотят больше уделить время практике.</div>
             </article>
-            <article class="s-item">
+            <article class="s-item"><img class="s-item__icon" src="./assets/images/icons/search-dollar.png" alt="Лупа">
               <h3 class="s-item__title">обзор рынка</h3>
               <div class="s-item__description">Обзоры мировых новостей: политика, геополитика, военные конфликты, заседания глав центральных банков, новости крупных мировых компаний. Обсуждение и рекомендации по заработку на данных новостях.</div>
             </article>
-            <article class="s-item">
+            <article class="s-item"><img class="s-item__icon" src="./assets/images/icons/profi.png" alt="Профи">
               <h3 class="s-item__title">мастер-классы</h3>
               <div class="s-item__description">Групповые занятия совместно с приглашенными спикерами - трейдерами. Мастер классы направленны на получение новых торговых стратегий, методик анализа рынков.</div>
             </article>
-            <article class="s-item">
+            <article class="s-item"><img class="s-item__icon" src="./assets/images/icons/signal.png" alt="Колокольчик">
               <h3 class="s-item__title">торговые сигналы</h3>
               <div class="s-item__description">Не хотите самостоятельно заниматься аналитикой? Получайте готовые торговые рекомендации в нашем Телеграм - канале и получайте прибыль</div>
             </article>
@@ -216,7 +229,7 @@
             <div class="section-title__right-line section-title__line"></div>
           </div>
           <div class="feedbacks__content"> 
-            <div class="fb-item"> 
+            <article class="fb-item"> 
               <h3 class="fb-item__name">Даниил</h3>
               <div class="fb-item__text"> 
                 <p>Обучение просто огонь!</p>
@@ -230,42 +243,42 @@
                 </ul>
                 <p>Спасибо!</p>
               </div>
-            </div>
-            <div class="fb-item"> 
+            </article>
+            <article class="fb-item"> 
               <h3 class="fb-item__name">Юрий</h3>
               <div class="fb-item__text"> 
                 <p>Пришло и моё время высказаться про обучение. Данное обучение для меня стало переворотным, оно поменяло моё зрение на рынок и рычное движение. Я стал понимать что происходит в рынке, потери минимизировались. Появились осознанные точки входа. За это конечно спасибо моему учителю Павлу, он стойко выдерживал мой тупёж)) Теперь только опыт и практика, начало правильных мыслей в меня заложили.  Материал довольно сложный, придется по работать мозгами. Так что если есть возможность и нужда, идите не раздумывая учиться!</p>
               </div>
-            </div>
-            <div class="fb-item"> 
+            </article>
+            <article class="fb-item"> 
               <h3 class="fb-item__name">Игорь</h3>
               <div class="fb-item__text"> 
                 <p>Добрый день!</p>
                 <p>Спасибо большое за проведённое обучение. Открыл для себя много интересного, полезного для торговли. Что важно отработал на практике. Приятно было общаться с Павлом Андреевичем, грамотным специалистом в данной области. В дальнейшем планируется продолжить обучение.  Ещё раз спасибо!!! </p>
               </div>
-            </div>
-            <div class="fb-item"> 
+            </article>
+            <article class="fb-item"> 
               <h3 class="fb-item__name">Татьяна</h3>
               <div class="fb-item__text"> 
                 <p>Очень благодарна Павлу!!! Спасибо за то, что научил разбираться на финансовом рынке, все нюансы детально разбирались и главное после обучения мы получили пошаговый алгоритм действий. Спасибо за то, что научил ставить правильные цели и выбирать лучшую стратегию инвестирования, так же благодарю за то, что буквально разложил по полочкам все ключевые финансовые инструменты, поэтому рекомендую brokerageschool! </p>
               </div>
-            </div>
-            <div class="fb-item">
+            </article>
+            <article class="fb-item">
               <h3 class="fb-item__name">Даниил (после 2 этапа обучения)</h3>
               <div class="fb-item__text">
                 <p>Второй этап обучения по фонде оказался ещё интереснее! Оказывается, торговля на отчётностях компаний и составление инвест портфеля на следующий год - не такие сложные вещи.</p>
                 <p>Приходилось конечно посидеть ночами, выбирая из 20 компаний 2, но зато узнал много нового для себя: кто что производит, какие тренды в мире, что Амазон не просто интернет магазин, а компания, в первую очередь занимающаяся облачными технологиями!</p>
                 <p>В общем, рынки стали ещё проще и доступнее, огромное спасибо! </p>
               </div>
-            </div>
-            <div class="fb-item">
+            </article>
+            <article class="fb-item">
               <h3 class="fb-item__name">Александр</h3>
               <div class="fb-item__text">
                 <p>Я обычно оставляю только плохие отзывы, когда не доволен сервисом или услугой, но это обучение - полное исключение. Знания о risk on / risk off, политике ЦБ мира и так далее.</p>
                 <p>НАСТОЛЬКО фундаментально важны, что без них невозможна любая торговля на Форексе и на Фондовом рынке тем более. Павел обладает чудесным чутьем, которое присуще далеко не каждому, потрясающим опытом в техническом анализе, а уж про фундаментальный я совершенно молчу.</p>
                 <p>Прекрасное обучение, которое стоит в 100 раз больше своей цены!</p>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </div>
@@ -277,12 +290,10 @@
              <i class="fab fa-whatsapp"></i></a><a class="footer__social-item" href="">
              <i class="fab fa-telegram"></i> </a></div>
         <div class="footer__contacts"><a class="footer__phone" href="tel:+7-920-258-67-64">+7-920-258-67-64</a>
-          <p class="footer__adress">Адрес: г. Москва, проезд Локомотивный, д. 21</p>
+          <address class="footer__adress">Адрес: г. Москва, проезд Локомотивный, д. 21</address>
           <p class="footer__all-rigths-reserved">ООО “Баустрой”. Все права защищены.</p>
         </div>
-        <div class="footer__nav"> 
-          <nav class="footer__nav"> <a class="footer__nav-item" href=""> <span>Главная </span></a><a class="footer__nav-item" href=""> <span>О школе</span></a><a class="footer__nav-item" href=""> <span>Услуги</span></a><a class="footer__nav-item" href=""> <span>Аналитика</span></a><a class="footer__nav-item" href=""> <span>BSKids</span></a><a class="footer__nav-item" href=""> <span>Контакты</span></a></nav>
-        </div>
+        <nav class="footer__nav"> <a class="footer__nav-item" href=""> <span>Главная </span></a><a class="footer__nav-item" href=""> <span>О школе</span></a><a class="footer__nav-item" href=""> <span>Услуги</span></a><a class="footer__nav-item" href=""> <span>Аналитика</span></a><a class="footer__nav-item" href=""> <span>BSKids</span></a><a class="footer__nav-item" href=""> <span>Контакты</span></a></nav>
       </div>
     </footer>
   </body>
