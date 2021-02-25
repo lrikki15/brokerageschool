@@ -81,8 +81,10 @@ gulp.task('watch', () => {
     watch(['./src/assets/images/**/*.*'], () => {
         setTimeout(gulp.parallel('images'), 500)
     });
+    watch(['./src/modules/**/*.*'], () => {
+        setTimeout(gulp.parallel('repalceModules'), 500)
+    });
 })
-
 gulp.task('js', (cb) => {
     return gulp.src('./src/js/*.js')
         .pipe(plumber(
@@ -112,4 +114,9 @@ gulp.task('images', function(cb){
         .pipe(gulp.dest('./dist/assets/images/'));
     cb();
 });
-gulp.task('default', gulp.series(gulp.parallel('scss', 'pug','images'), gulp.parallel('watch','server'))); 
+//перенос подключаемых модулей
+gulp.task('repalceModules', function(){
+    return gulp.src('./src/modules/**/*.**')
+    .pipe(gulp.dest('./dist/modules/'));
+})
+gulp.task('default', gulp.series(gulp.parallel('scss', 'pug','images','repalceModules'), gulp.parallel('watch','server'))); 

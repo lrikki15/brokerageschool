@@ -4,13 +4,13 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        script(src="./js/index.js") 
         title Brokerage - школа трейдинга
         link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.0.13/css/all.css")
         link(rel="preconnect", href="https://fonts.gstatic.com")
         link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Red+Rose:wght@300;700&display=swap" rel="stylesheet")
         link(rel="stylesheet", href="./css/index.css")
-
+        include ./modules/_modules-css.pug
+        include ./modules/_modules-scripts.pug
     body 
         include ./modules/main-header.pug
         main.main 
@@ -102,6 +102,12 @@ html(lang="ru")
                                         img(src="./assets/images/logotipes/disney.png", alt="Логотип Disney").lp-card__logo-image
                                     span.lp-card__profit 235%
                                 p.lp-card__description  Walt Disney Company - один из крупнейших медиаконгломератов индустрии развлечений, известный нам с самого детства! Доходность за 2020 год составила 235%!
+            .main__section.free-classes
+                .main__container.free-classes__container.container
+                    .section-title.free-classes__section-title
+                        h2.section-title__text Только образование и опыт делают человека богаче: получи 3 бесплатных урока и сделай первые шаги на пути трейдера!
+                    a(href="").free-classes__button.button.button_on-white
+                        span.button__text Получить бесплатные уроки
             .main__section.services
                 .main__container.container
                     .section-title
@@ -110,25 +116,31 @@ html(lang="ru")
                         .section-title__right-line.section-title__line
                     .services__items
                         article.s-item
+                            img(src="./assets/images/icons/base-course.png", alt="Уровень 1").s-item__icon
                             h3.s-item__title учебный курс "базовый"
                             .s-item__description Это базовая программа, рассчитанная на две недели обучения. Слушателям назначается куратор, с которым согласуется посещение и расписание уроков торговли на валютном и Фондовом рынках
 
                         article.s-item
+                            img(src="./assets/images/icons/wide-course.png", alt="Уровень 2").s-item__icon
                             h3.s-item__title учебный курс "расширенный"
                             .s-item__description В данном курсе участвуют слушатели программы Базового курса, а также трейдеры, которые уже имеют базовые знания и хотят больше уделить время практике.
 
                         article.s-item
+                            img(src="./assets/images/icons/expert-course.png", alt="Уровень 3").s-item__icon
                             h3.s-item__title учебный курс "эксперт"
                             .s-item__description В данном курсе участвуют слушатели программы Базового курса, и расширенного курса а также трейдеры, которые уже имеют базовые знания и хотят больше уделить время практике.
 
                         article.s-item
+                            img(src="./assets/images/icons/search-dollar.png", alt="Лупа").s-item__icon
                             h3.s-item__title обзор рынка
                             .s-item__description Обзоры мировых новостей: политика, геополитика, военные конфликты, заседания глав центральных банков, новости крупных мировых компаний. Обсуждение и рекомендации по заработку на данных новостях.
 
                         article.s-item
+                            img(src="./assets/images/icons/profi.png", alt="Профи").s-item__icon
                             h3.s-item__title мастер-классы
                             .s-item__description Групповые занятия совместно с приглашенными спикерами - трейдерами. Мастер классы направленны на получение новых торговых стратегий, методик анализа рынков.
                         article.s-item
+                            img(src="./assets/images/icons/signal.png", alt="Колокольчик").s-item__icon
                             h3.s-item__title торговые сигналы
                             .s-item__description Не хотите самостоятельно заниматься аналитикой? Получайте готовые торговые рекомендации в нашем Телеграм - канале и получайте прибыль
                     a(href="./services.html").services__button.button 
@@ -163,7 +175,7 @@ html(lang="ru")
                         h2.section-title__text Отзывы клиентов
                         .section-title__right-line.section-title__line
                     .feedbacks__content 
-                        .fb-item 
+                        article.fb-item 
                             h3.fb-item__name Даниил
                             .fb-item__text 
                                 p Обучение просто огонь!
@@ -175,30 +187,30 @@ html(lang="ru")
                                     li 4) Наконец-то ощущаю осознанность каждой открытой сделки и перестал делать это "на хайпе" и "ну вроде бы сейчас"
                                     li 5) Радуюсь четырем пунктам выше и планирую продолжение обучения!
                                 p Спасибо!
-                        .fb-item 
+                        article.fb-item 
                             h3.fb-item__name Юрий
                             .fb-item__text 
                                 p Пришло и моё время высказаться про обучение. Данное обучение для меня стало переворотным, оно поменяло моё зрение на рынок и рычное движение. Я стал понимать что происходит в рынке, потери минимизировались. Появились осознанные точки входа. За это конечно спасибо моему учителю Павлу, он стойко выдерживал мой тупёж)) Теперь только опыт и практика, начало правильных мыслей в меня заложили.  Материал довольно сложный, придется по работать мозгами. Так что если есть возможность и нужда, идите не раздумывая учиться!
-                        .fb-item 
+                        article.fb-item 
                             h3.fb-item__name Игорь
                             .fb-item__text 
                                 p Добрый день!
                                 p Спасибо большое за проведённое обучение. Открыл для себя много интересного, полезного для торговли. Что важно отработал на практике. Приятно было общаться с Павлом Андреевичем, грамотным специалистом в данной области. В дальнейшем планируется продолжить обучение.  Ещё раз спасибо!!! 
-                        .fb-item 
+                        article.fb-item 
                             h3.fb-item__name Татьяна
                             .fb-item__text 
                                 p Очень благодарна Павлу!!! Спасибо за то, что научил разбираться на финансовом рынке, все нюансы детально разбирались и главное после обучения мы получили пошаговый алгоритм действий. Спасибо за то, что научил ставить правильные цели и выбирать лучшую стратегию инвестирования, так же благодарю за то, что буквально разложил по полочкам все ключевые финансовые инструменты, поэтому рекомендую brokerageschool! 
-                        .fb-item
+                        article.fb-item
                             h3.fb-item__name Даниил (после 2 этапа обучения)
                             .fb-item__text
                                 p Второй этап обучения по фонде оказался ещё интереснее! Оказывается, торговля на отчётностях компаний и составление инвест портфеля на следующий год - не такие сложные вещи.
                                 p Приходилось конечно посидеть ночами, выбирая из 20 компаний 2, но зато узнал много нового для себя: кто что производит, какие тренды в мире, что Амазон не просто интернет магазин, а компания, в первую очередь занимающаяся облачными технологиями!
                                 p В общем, рынки стали ещё проще и доступнее, огромное спасибо! 
-                        .fb-item
+                        article.fb-item
                             h3.fb-item__name Александр
                             .fb-item__text
                                 p Я обычно оставляю только плохие отзывы, когда не доволен сервисом или услугой, но это обучение - полное исключение. Знания о risk on / risk off, политике ЦБ мира и так далее.
                                 p НАСТОЛЬКО фундаментально важны, что без них невозможна любая торговля на Форексе и на Фондовом рынке тем более. Павел обладает чудесным чутьем, которое присуще далеко не каждому, потрясающим опытом в техническом анализе, а уж про фундаментальный я совершенно молчу.
                                 p Прекрасное обучение, которое стоит в 100 раз больше своей цены!
         include ./modules/footer.pug
-                             
+                            

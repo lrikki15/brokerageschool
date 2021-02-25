@@ -19,13 +19,12 @@
     @include screen_992{
     }
 }
-
 .wt-item{
     display: flex;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
     flex-direction: column;
     margin-bottom: 2vh;
-
+    border-radius: 10px;
     @include screen_576{
         width: 48%;
         margin-bottom: 4vh;
@@ -44,6 +43,7 @@
 
         & > img{
             width: 100%;
+            border-radius: 10px 10px 0 0;
         }
     }
     &__container{
@@ -63,14 +63,21 @@
         }
     }
 }
-
 .lost-profit{
     background-color: $mainBlack;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: $mainWhite;
-
+    background: $mainBlack url(../assets/images/chart-2.png) no-repeat;
+    background-size: cover ;
+    background-position:  center;
+    background-attachment: fixed;
+    background-position:  10% 0% ;
+    @include screen_768{
+        background-size: 100% auto;
+        background-position:  10% 40% ;
+    }
     &__text{
         font-size: 1.2rem;
         @include screen_992{
@@ -93,7 +100,13 @@
     display: flex;
     margin-bottom: 2vh;
     align-items: center;
-    
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 1.5rem;
     @include screen_576{
         width: 48%;
         border: 1px solid $mainWhite;
@@ -140,6 +153,30 @@
         }
     }
 }
+.free-classes{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    &__container{
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 2vh;
+    }
+    
+    &__section-title{
+        align-self: center;
+        margin-bottom: 4vh;
+        & > h2{
+            text-align: center;
+        }
+    }
+    &__button{
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+        color: white;
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
+    }
+}
 .services{
     display: flex;
     flex-direction: column;
@@ -179,9 +216,6 @@
 .s-item{
     display: flex;
     flex-direction: column;
-    background: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(255, 255, 255, 0.425);
-    box-shadow: 0px 0px 8px rgba(236, 238, 243, 0.8);
     background: rgba( 255, 255, 255, 0.15 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 5px );
@@ -216,8 +250,8 @@
     }
     &__icon{
         position: absolute;
-        height: 90%;
-        opacity: 0.15;
+        height: 20%;
+        opacity: 1;
         top: 5%;
         right: 5%;
     }
@@ -297,37 +331,40 @@
         
     }
 }
+.slick-arrow {
+    display: none !important;
+    @include screen_768{
+        display: block !important;
+    }
+}
 .feedbacks{
     background-color: $mainBlack;
     display: flex;
     flex-direction: column;
-    align-items: center;
     color: $mainWhite;
     &__content{
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: space-evenly;
+        width: 100%;
         margin-bottom: 4vh;
-        @include screen_992{
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
     }
+
 }
 .fb-item{
     display: flex;
     flex-direction: column;
-    border: 1px solid $mainWhite;
-    box-shadow: 0px 0px 8px rgba(236, 238, 243, 0.25);
-    padding: 2rem 3rem;
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: white;
+    padding: 1.5rem 2.5rem;
+    margin: 0 1.5rem;
+    min-height: 100%;
     &:not(:last-child){
         margin-bottom: 2vh;
     }
-    
-    @include screen_992{
-        width: 48%;
-    }
+
     &__name{
         font-size: 1.6rem;
         margin-bottom: 1.5rem;
@@ -340,50 +377,87 @@
         @include screen_768{
             font-size: 1.4rem;
         }
-        
     }
 }
 .footer{
+    border-top: 1px solid rgba( 255, 255, 255, 0.15 );
     background-color: $mainBlack;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: $mainWhite;
     font-size: 1.2rem;
-
-    &__container{
+    @include screen_360{
+        font-size: 1.2rem;
+    }   
+    
+    &__container {
         flex-direction: column;
         padding-top: 4vh;
+        width: 90%;
+        @include screen_768{
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-evenly;
+        }
+        @include screen_992{
+            justify-content: center;
+            align-items: flex-start;
+        }
     }
     &__social{
         display: flex;
         align-self: center;
         margin-bottom: 2vh;
+        font-size: 1.6rem;
+        @include screen_768{
+            flex-direction: column;
+        }
     }
     &__social-item{
         margin-right: 1rem;
+        @include screen_768{
+            margin-right: 0;
+            margin-bottom: 1vh;
+        }
     }
     &__contacts{
         display: flex;
         flex-direction: column;
         margin-bottom: 2vh;
         order:4;
+
+
+        @include screen_768{
+            order: 0;
+            align-items: flex-start;
+
+        }
         align-items: center;
         margin-bottom: 4vh;
     }
     &__phone{
         margin-bottom: 2vh;
+        @include screen_768{
+            margin-bottom: 1vh;
+        }
     }
     &__nav{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        @include screen_768{
+        }
     }
     &__nav-item{
         display: flex;
         width: 33%;
         margin-bottom: 2vh;
+        @include screen_768{
+            width: auto;
+            margin-bottom: 1vh;
 
+        }
         & > span {
             margin: auto;
         }

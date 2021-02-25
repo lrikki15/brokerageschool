@@ -2,12 +2,10 @@
 @import './variables';
 @import './mixins';
 @import './index-header';
-@import './index-main';
 
 html{
     font-size: 10px;
 }
-
 body{
     color: $textBlack;
     display: flex;
@@ -15,7 +13,9 @@ body{
     align-items: stretch;
     font-family: $roboto;
 }
-
+address{
+    font-style: inherit;
+}
 .container{
     width: 90%;
     height: 100%;
@@ -23,7 +23,6 @@ body{
     flex-direction: column;
     margin: 0 auto;
 }
-
 .dark-layer{
     position: absolute;
     background-color: $darkLayer;
@@ -32,7 +31,6 @@ body{
     background: rgba(0, 1, 10, 0.65);
     backdrop-filter: blur(5px);
 }
-
 .section-title{
     display: flex;
     align-self: stretch;
@@ -87,9 +85,12 @@ body{
     cursor: pointer;
     padding: 10px 20px;
     margin-bottom: 4vh;
+    font-size: 1.2rem;
 
     @include screen_992{
        padding: 1rem 5rem;
+       width: 30%;
+       align-self: center;
     }
 
     &__text {
@@ -101,7 +102,10 @@ body{
             font-size: 1.4rem;
         }
     }
-    
+    &_on-white{
+        background: linear-gradient(180deg, rgba(11, 168, 236, 0.9801) 0%, rgba(134, 168, 255, 0.99) 100%);
+
+    }
     &:hover{
         background: linear-gradient(180deg, rgba(134, 168, 255, 0.99) 0%, rgba(11, 168, 236, 0.9801) 100%);
     }
@@ -110,4 +114,4 @@ body{
         padding: 15px 20px;
     }
 }
-
+@import './index-main';
